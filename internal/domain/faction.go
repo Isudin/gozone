@@ -1,5 +1,7 @@
 package domain
 
 type Faction struct {
-	Name string
+	Name   string
+	Leader Player
+	Base   Location
 }
