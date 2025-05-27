@@ -1,9 +1,5 @@
-package gozone
-
-import {
-	"fmt"
-}
+package main
 
 func main() {
-	println("Hello Zone!")	
+	println("Welcome to the Zone, stalker.")
 }
