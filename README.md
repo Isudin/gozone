@@ -1,2 +1,2 @@
-# gozone
-Terminal-based game with S.T.A.L.K.E.R. vibe
+# GoZone
+Terminal-based game in S.T.A.L.K.E.R. universe 
