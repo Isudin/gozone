@@ -4,13 +4,12 @@ import (
 	"bufio"
 	"os"
 
+	"github.com/isudin/gozone/cmd/gozone/commands"
 	"github.com/isudin/gozone/internal/domain"
 )
 
 func main() {
-	for _, command := range Commands {
-		command.showHelpInfo()
-	}
+	commands.Commands["help"].Exec(nil)
 }
 
 func getPlayerData() {
