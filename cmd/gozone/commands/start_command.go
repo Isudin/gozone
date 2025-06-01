@@ -1,7 +1,7 @@
 package commands
 
-func init() {
-	Commands["start"] = Command{
+func newStartCommand() Command {
+	return Command{
 		Name: "start",
 		Desc: "Start the game",
 		Exec: start,

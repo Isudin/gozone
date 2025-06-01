@@ -1,11 +1,11 @@
 package commands
 
-func init() {
-	Commands["help"] = Command{
+func newHelpCommand(commands map[string]Command) Command {
+	return Command{
 		Name: "help",
 		Desc: "List all commands",
 		Exec: func(args []string) error {
-			for _, Command := range Commands {
+			for _, Command := range commands {
 				Command.ShowHelpInfo()
 			}
 

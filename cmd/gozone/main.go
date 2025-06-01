@@ -2,10 +2,10 @@ package main
 
 import (
 	"bufio"
-	"context"
 	"database/sql"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/isudin/gozone/cmd/gozone/commands"
 	"github.com/isudin/gozone/internal/domain"
@@ -15,13 +15,36 @@ import (
 )
 
 func main() {
-	queries := initDatabase()
-	// TODO: Move CreateFaction to init_command.go
-	queries.CreateFaction(context.Background(), "Test")
-	commands.Commands["help"].Exec(nil)
+	queries := initDbConnection()
+	cmds := commands.InitCommands(queries)
+
+	if len(os.Args) < 1 {
+		cmds["help"].Exec(nil)
+		os.Exit(0)
+	}
+
+	// TODO: use 'i' for additional params
+	// i := 0
+	name := ""
+	for _, arg := range os.Args {
+		if strings.HasPrefix(arg, "/") {
+			continue
+		}
+
+		// i = x
+		name = arg
+	}
+
+	log.Println(name)
+	cmd := cmds[name]
+	if cmd.Name == "" {
+		log.Fatal("command not found")
+	}
+
+	cmd.Exec(nil)
 }
 
-func initDatabase() *sqlc.Queries {
+func initDbConnection() *sqlc.Queries {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("error loading .env file")
