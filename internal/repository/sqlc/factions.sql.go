@@ -7,6 +7,8 @@ package sqlc
 
 import (
 	"context"
+
+	"github.com/google/uuid"
 )
 
 const createFaction = `-- name: CreateFaction :one
@@ -18,6 +20,76 @@ RETURNING id, created_at, updated_at, name
 
 func (q *Queries) CreateFaction(ctx context.Context, name string) (Faction, error) {
 	row := q.db.QueryRowContext(ctx, createFaction, name)
+	var i Faction
+	err := row.Scan(
+		&i.ID,
+		&i.CreatedAt,
+		&i.UpdatedAt,
+		&i.Name,
+	)
+	return i, err
+}
+
+const deleteAllFactions = `-- name: DeleteAllFactions :exec
+DELETE FROM factions
+`
+
+func (q *Queries) DeleteAllFactions(ctx context.Context) error {
+	_, err := q.db.ExecContext(ctx, deleteAllFactions)
+	return err
+}
+
+const deleteFaction = `-- name: DeleteFaction :exec
+DELETE FROM factions
+  WHERE id = $1
+`
+
+func (q *Queries) DeleteFaction(ctx context.Context, id uuid.UUID) error {
+	_, err := q.db.ExecContext(ctx, deleteFaction, id)
+	return err
+}
+
+const getAllFactions = `-- name: GetAllFactions :many
+SELECT id, created_at, updated_at, name
+  FROM factions
+`
+
+func (q *Queries) GetAllFactions(ctx context.Context) ([]Faction, error) {
+	rows, err := q.db.QueryContext(ctx, getAllFactions)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Faction
+	for rows.Next() {
+		var i Faction
+		if err := rows.Scan(
+			&i.ID,
+			&i.CreatedAt,
+			&i.UpdatedAt,
+			&i.Name,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getFactionById = `-- name: GetFactionById :one
+SELECT id, created_at, updated_at, name
+  FROM factions
+  WHERE id = $1
+`
+
+func (q *Queries) GetFactionById(ctx context.Context, id uuid.UUID) (Faction, error) {
+	row := q.db.QueryRowContext(ctx, getFactionById, id)
 	var i Faction
 	err := row.Scan(
 		&i.ID,
