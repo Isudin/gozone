@@ -1,17 +1,23 @@
 package commands
 
 import (
-	"context"
+	"fmt"
 
 	"github.com/isudin/gozone/internal/repository/sqlc"
+	"github.com/isudin/gozone/internal/usecases"
 )
 
 func newInitCommand(queries *sqlc.Queries) Command {
 	return Command{
 		Name: "init",
-		Desc: "Wipe, initialize and populate database",
+		Desc: "Wipe and populate database",
 		Exec: func(args []string) error {
-			queries.CreateFaction(context.Background(), "Test")
+			err := usecases.InitDatabase(queries)
+			if err != nil {
+				fmt.Println(err)
+				return err
+			}
+
 			return nil
 		},
 	}
