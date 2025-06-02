@@ -35,3 +35,76 @@ func (q *Queries) CreateNpc(ctx context.Context, arg CreateNpcParams) (Npc, erro
 	)
 	return i, err
 }
+
+const deleteAllNpc = `-- name: DeleteAllNpc :exec
+DELETE FROM npc
+`
+
+func (q *Queries) DeleteAllNpc(ctx context.Context) error {
+	_, err := q.db.ExecContext(ctx, deleteAllNpc)
+	return err
+}
+
+const deleteNpc = `-- name: DeleteNpc :exec
+DELETE FROM npc
+  WHERE id = $1
+`
+
+func (q *Queries) DeleteNpc(ctx context.Context, id uuid.UUID) error {
+	_, err := q.db.ExecContext(ctx, deleteNpc, id)
+	return err
+}
+
+const getNpcByFactionId = `-- name: GetNpcByFactionId :many
+SELECT id, created_at, updated_at, name, faction_id
+  FROM npc
+  WHERE faction_id = $1
+`
+
+func (q *Queries) GetNpcByFactionId(ctx context.Context, factionID uuid.UUID) ([]Npc, error) {
+	rows, err := q.db.QueryContext(ctx, getNpcByFactionId, factionID)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Npc
+	for rows.Next() {
+		var i Npc
+		if err := rows.Scan(
+			&i.ID,
+			&i.CreatedAt,
+			&i.UpdatedAt,
+			&i.Name,
+			&i.FactionID,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getNpcById = `-- name: GetNpcById :one
+SELECT id, created_at, updated_at, name, faction_id
+  FROM npc
+  WHERE id = $1
+`
+
+func (q *Queries) GetNpcById(ctx context.Context, id uuid.UUID) (Npc, error) {
+	row := q.db.QueryRowContext(ctx, getNpcById, id)
+	var i Npc
+	err := row.Scan(
+		&i.ID,
+		&i.CreatedAt,
+		&i.UpdatedAt,
+		&i.Name,
+		&i.FactionID,
+	)
+	return i, err
+}
