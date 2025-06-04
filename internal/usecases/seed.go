@@ -32,24 +32,24 @@ func clearFactions(queries *sqlc.Queries) error {
 	return err
 }
 
-func initFactions(queries *sqlc.Queries) (map[string]uuid.UUID, error) {
-	factionNames := []string{
-		"Duty",
-		"Freedom",
-		"Loners",
-		"Bandits",
-		"Military",
-		"Mercenaries",
-		"Ecologists",
-		"Monolith",
-		"Clear Sky",
-		"Renegades",
-		"Noontide",
-		"Spark",
-		"Ward",
-		"Corps",
-	}
+var factionNames = []string{
+	"Duty",
+	"Freedom",
+	"Loners",
+	"Bandits",
+	"Military",
+	"Mercenaries",
+	"Ecologists",
+	"Monolith",
+	"Clear Sky",
+	"Renegades",
+	"Noontide",
+	"Spark",
+	"Ward",
+	"Corps",
+}
 
+func initFactions(queries *sqlc.Queries) (map[string]uuid.UUID, error) {
 	factions := make(map[string]uuid.UUID)
 
 	for _, name := range factionNames {
