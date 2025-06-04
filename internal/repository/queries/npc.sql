@@ -20,3 +20,6 @@ SELECT *
 SELECT *
   FROM npc
   WHERE faction_id = $1;
+
+-- name: CountNpc :one
+SELECT COUNT(*) FROM npc;

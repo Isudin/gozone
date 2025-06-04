@@ -11,6 +11,17 @@ import (
 	"github.com/google/uuid"
 )
 
+const countNpc = `-- name: CountNpc :one
+SELECT COUNT(*) FROM npc
+`
+
+func (q *Queries) CountNpc(ctx context.Context) (int64, error) {
+	row := q.db.QueryRowContext(ctx, countNpc)
+	var count int64
+	err := row.Scan(&count)
+	return count, err
+}
+
 const createNpc = `-- name: CreateNpc :one
 INSERT INTO npc (
   id, created_at, updated_at, name, faction_id
