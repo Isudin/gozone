@@ -43,6 +43,10 @@ jobs:
           sleep 3
         done
 
+    - name: Test the DB
+      run: |
+        PGPASSWORD=postgres psql -h postgres -U postgres -d gozone -c '\l'
+
     - name: Fetch dependancies
       run: go mod download
 
