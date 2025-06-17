@@ -42,7 +42,7 @@ jobs:
         GOOSE_DRIVER: postgres
         GOOSE_MIGRATION_DIR: ../../internal/repository/schema
         GOOSE_TABLE: public.goose_migrations
-        DB_URL: postgresql://postgres:postgres@db:5432/gozone?sslmode=disable
+        DB_URL: postgresql://postgres:postgres@postgres:5432/gozone?sslmode=disable
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: postgres
         POSTGRES_DB: gozone
