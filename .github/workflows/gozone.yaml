@@ -1,6 +1,3 @@
-# This workflow will build a golang project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
-
 name: gozone
 
 on:
@@ -13,18 +10,20 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-  
+
     services:
         postgres:
           image: postgres
           env:
+            POSTGRES_USER: postgres
             POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: gozone
           options: >-
             --health-cmd pg_isready
             --health-interval 10s
             --health-timeout 5s
             --health-retries 5
-            
+
     steps:
     - uses: actions/checkout@v4
 
@@ -32,10 +31,21 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.24'
-        
+
+    - name: Set up Postgres
+      run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+    - name: Wait for Postgres
+      run: |
+        for i in {1..10}; do
+          pg_isready -h postgres -p 5432 && echo "Postgres is ready!" && break
+          echo "Waiting for Postgres..."
+          sleep 3
+        done
+
     - name: Fetch dependancies
       run: go mod download
-    
+
     - name: Test
       run: go test -v ./...
       env:
@@ -43,8 +53,3 @@ jobs:
         GOOSE_MIGRATION_DIR: ../../internal/repository/schema
         GOOSE_TABLE: public.goose_migrations
         DB_URL: postgresql://postgres:postgres@postgres:5432/gozone?sslmode=disable
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: postgres
-        POSTGRES_DB: gozone
-        POSTGRES_HOST: postgres
-        POSTGRES_PORT: 5432
