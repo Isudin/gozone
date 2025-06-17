@@ -22,7 +22,7 @@ func init() {
 
 	envPath := filepath.Join(basepath, ".env.test")
 	if err := godotenv.Load(envPath); err != nil {
-		log.Fatalf("failed to load env file: %v", err)
+		log.Printf("couldn't load env file, proceeding with default variables")
 	}
 }
 
@@ -30,7 +30,7 @@ var db *sql.DB
 
 func TestMain(m *testing.M) {
 	var err error
-	db, err = sql.Open("postgres", os.Getenv("GOOSE_DBSTRING"))
+	db, err = sql.Open("postgres", os.Getenv("DB_URL"))
 	if err != nil {
 		log.Fatalf("could not connect to the database: %v", err)
 	}
