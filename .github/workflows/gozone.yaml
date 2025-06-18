@@ -16,16 +16,16 @@ jobs:
 
     services:
         postgres:
-          image: postgres
-          env:
-            POSTGRES_USER: postgres
-            POSTGRES_PASSWORD: postgres
-            POSTGRES_DB: gozone
-          options: >-
-            --health-cmd pg_isready
-            --health-interval 10s
-            --health-timeout 5s
-            --health-retries 5
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: gozone
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
     - uses: actions/checkout@v4
@@ -36,7 +36,7 @@ jobs:
         go-version: '1.24'
 
     - name: Set up Postgres
-      run: apt-get update && apt-get install -y postgresql-client
+      run: apt-get update && apt-get install -y postgresql-client-17
 
     - name: Wait for Postgres
       run: |
