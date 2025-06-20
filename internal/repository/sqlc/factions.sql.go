@@ -31,7 +31,7 @@ func (q *Queries) CreateFaction(ctx context.Context, name string) (Faction, erro
 }
 
 const deleteAllFactions = `-- name: DeleteAllFactions :exec
-DELETE FROM factions
+DELETE FROM factions CASCADE
 `
 
 func (q *Queries) DeleteAllFactions(ctx context.Context) error {

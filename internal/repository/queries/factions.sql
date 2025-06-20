@@ -6,10 +6,10 @@ RETURNING *;
 
 -- name: DeleteFaction :exec
 DELETE FROM factions
-  WHERE id = $1;
+  WHERE id = $1 CASCADE;
 
 -- name: DeleteAllFactions :exec
-DELETE FROM factions;
+DELETE FROM factions CASCADE;
 
 -- name: GetFactionById :one
 SELECT *
