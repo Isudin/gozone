@@ -32,6 +32,8 @@ var GeneralMonikers = []string{
 	"Ghost", "Viper", "Torch", "Fang", "Shadow", "Scarab", "Raven", "Frost", "Ash", "Grim", "Nomad", "Howl", "Echo", "Dust", "Blight", "Snare", "Drift",
 	"Spook", "Moth", "Spire", "Gnarl", "Rust", "Stray", "Scar", "Witch", "Thorn", "Flint", "Soot", "Shiv", "Bark", "Brisk", "Snag", "Tusk", "Crack",
 	"Fume", "Spike", "Crush", "Choke", "Scorn", "Gloom", "Flick", "Pox", "Splice", "Warp", "Glint", "Grub", "Fleck", "Wretch", "Whisk", "Slag", "Smudge",
+	"Bulldog", "Ironclad", "Major", "Grim", "Lockjaw", "Torch", "Dragnet", "Vigil", "Crimson", "Warhound", "Sentinel", "Anvil", "Grizzly",
+	"Breaker", "Steel", "Razor", "Ghosthound", "Marshal", "Rampart", "Bunker", "Grit", "Howler", "Smokescreen", "Krepost", "Sickle",
 }
 
 var MonolithMonikers = []string{
