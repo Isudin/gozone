@@ -1,0 +1,723 @@
+{
+  "titles": {
+    "military": [
+      "Pvt.",
+      "Cpl.",
+      "Sgt.",
+      "Lt.",
+      "Cpt.",
+      "Maj.",
+      "Col."
+    ],
+    "scientific": [
+      "Dr.",
+      "Prof.",
+      "Lab Tech"
+    ]
+  },
+  "firstnames": {
+    "male": [
+      "Artyom",
+      "Yuri",
+      "Viktor",
+      "Dmitri",
+      "Alexei",
+      "Mikhail",
+      "Sergei",
+      "Oleg",
+      "Nikolai",
+      "Andrei",
+      "Ivan",
+      "Grigori",
+      "Vasili",
+      "Pavel",
+      "Stepan",
+      "Bogdan",
+      "Igor",
+      "Anatoly",
+      "Roman",
+      "Leonid",
+      "Taras",
+      "Petro",
+      "Oleksandr",
+      "Mykola",
+      "Volodymyr",
+      "Denys",
+      "Kyrylo",
+      "Vadym",
+      "Yaroslav",
+      "Borys",
+      "Ihor",
+      "Stanislav",
+      "Maxym",
+      "Valeriy",
+      "Vitaliy",
+      "Artur",
+      "Semen",
+      "Georgiy",
+      "Oleksiy",
+      "Ruslan",
+      "Hryhoriy",
+      "Illia",
+      "Arkadiy",
+      "Evgen",
+      "Fedor",
+      "Gennadiy",
+      "Ostap",
+      "Zinoviy",
+      "Andriy",
+      "Marko"
+    ],
+    "female": [
+      "Anastasia",
+      "Irina",
+      "Elena",
+      "Natalia",
+      "Tatiana",
+      "Svetlana",
+      "Galina",
+      "Maria",
+      "Yulia",
+      "Daria",
+      "Oksana",
+      "Olga",
+      "Larysa",
+      "Inna",
+      "Iryna",
+      "Kateryna",
+      "Halyna",
+      "Nadiya",
+      "Taisiia",
+      "Viktoria",
+      "Liliya",
+      "Nina",
+      "Zinaida",
+      "Marta",
+      "Alla",
+      "Valentina",
+      "Yana",
+      "Lyudmila",
+      "Tamara",
+      "Olesya",
+      "Veronika",
+      "Marichka",
+      "Bogdana",
+      "Lesya",
+      "Oriana",
+      "Roksana",
+      "Lubov",
+      "Evgeniya",
+      "Zoya",
+      "Milana",
+      "Karina",
+      "Sofiya",
+      "Solomiya",
+      "Olena",
+      "Kseniya",
+      "Polina",
+      "Daryna",
+      "Marianna",
+      "Alyona",
+      "Zlata"
+    ]
+  },
+  "lastnames": {
+    "male": [
+      "Petrov",
+      "Sidorov",
+      "Ivanov",
+      "Morozov",
+      "Pavlenko",
+      "Shevchenko",
+      "Bondarenko",
+      "Tkachenko",
+      "Kovalenko",
+      "Melnyk",
+      "Boyko",
+      "Kravchenko",
+      "Mazurenko",
+      "Polishchuk",
+      "Tymoshenko",
+      "Samoylenko",
+      "Volkov",
+      "Tarasenko",
+      "Kozlov",
+      "Zinchenko",
+      "Horobets",
+      "Myronenko",
+      "Rudenko",
+      "Savchenko",
+      "Pushkarev",
+      "Babich",
+      "Andriienko",
+      "Filatov",
+      "Gerasimov",
+      "Korol",
+      "Lebedev",
+      "Maksymenko",
+      "Nazarov",
+      "Ponomarenko",
+      "Radchenko",
+      "Semenov",
+      "Titov",
+      "Ustinov",
+      "Vasilenko",
+      "Yermakov",
+      "Zhuravlev",
+      "Fedorenko",
+      "Dorofeev",
+      "Yakovlev",
+      "Gavrilov",
+      "Panchenko",
+      "Reznikov",
+      "Karpov",
+      "Chumak",
+      "Doronin"
+    ],
+    "female": [
+      "Petrova",
+      "Sidorova",
+      "Ivanova",
+      "Morozova",
+      "Pavlenko",
+      "Shevchenko",
+      "Bondarenko",
+      "Tkachenko",
+      "Kovalenko",
+      "Melnyka",
+      "Boyko",
+      "Kravchenko",
+      "Mazurenko",
+      "Polishchuka",
+      "Tymoshenko",
+      "Samoylenko",
+      "Volkova",
+      "Tarasenko",
+      "Kozlova",
+      "Zinchenko",
+      "Horobetsa",
+      "Myronenko",
+      "Rudenko",
+      "Savchenko",
+      "Pushkareva",
+      "Babicha",
+      "Andriienko",
+      "Filatova",
+      "Gerasimova",
+      "Korola",
+      "Lebedeva",
+      "Maksymenko",
+      "Nazarova",
+      "Ponomarenko",
+      "Radchenko",
+      "Semenova",
+      "Titova",
+      "Ustinova",
+      "Vasilenko",
+      "Yermakova",
+      "Zhuravleva",
+      "Fedorenko",
+      "Dorofeeva",
+      "Yakovleva",
+      "Gavrilova",
+      "Panchenko",
+      "Reznikova",
+      "Karpova",
+      "Chumaka",
+      "Doronina"
+    ]
+  },
+  "monikers": {
+    "Duty": [
+      "Scarlet Fang",
+      "Wild Warden",
+      "Frozen Nova",
+      "Scarlet Shiv",
+      "Ghost Drift",
+      "Brave Torch",
+      "Silent Ash",
+      "Burning Warden",
+      "Feral Snare",
+      "Silent Shiv",
+      "Burning Shiv",
+      "Brave Warden",
+      "Sharp Drift",
+      "Wild Fang",
+      "Red Hawk",
+      "Blazing Claw",
+      "Black Echo",
+      "Blazing Rust",
+      "Ghost Blade",
+      "Scarlet Witch",
+      "Shadow Snare",
+      "Wild Torch",
+      "Sharp Shiv",
+      "Scarlet Blade",
+      "Ghost Shiv"
+    ],
+    "Freedom": [
+      "Hidden Snare",
+      "Shadow Drift",
+      "Burning Ash",
+      "Iron Warden",
+      "Hidden Ash",
+      "Frozen Rust",
+      "Grim Claw",
+      "Sharp Witch",
+      "Red Witch",
+      "Shadow Echo",
+      "Wild Ash",
+      "Red Shiv",
+      "Frozen Bolt",
+      "Sharp Blade",
+      "Wild Shiv",
+      "Frozen Spear",
+      "Iron Spear",
+      "Ghost Echo",
+      "Cold Spear",
+      "Burning Spore",
+      "Grim Moth",
+      "Black Claw",
+      "Black Warden",
+      "Vile Shiv",
+      "Wild Drift"
+    ],
+    "Ecologists": [
+      "Brave Drift",
+      "Grim Witch",
+      "Feral Spore",
+      "Ghost Torch",
+      "Scarlet Nova",
+      "Grim Snare",
+      "Sharp Gnarl",
+      "Silent Rust",
+      "Vile Claw",
+      "Hidden Hawk",
+      "Red Moth",
+      "Silent Claw",
+      "Feral Bolt",
+      "Feral Rust",
+      "Hidden Gnarl",
+      "Burning Nova",
+      "Shadow Bolt",
+      "Vile Gnarl",
+      "Silent Snare",
+      "Blazing Spore",
+      "Shadow Stray",
+      "Frozen Torch",
+      "Frozen Drift",
+      "Ghost Ash",
+      "Dusty Ash"
+    ],
+    "Bandits": [
+      "Vile Nova",
+      "Black Spore",
+      "Vile Bolt",
+      "Wild Gnarl",
+      "Brave Echo",
+      "Vile Echo",
+      "Hidden Blade",
+      "Shadow Moth",
+      "Feral Moth",
+      "Scarlet Warden",
+      "Frozen Ash",
+      "Blazing Fang",
+      "Cold Shiv",
+      "Frozen Fang",
+      "Ghost Gnarl",
+      "Frozen Claw",
+      "Dusty Echo",
+      "Cold Drift",
+      "Dusty Warden",
+      "Dusty Hawk",
+      "Burning Rust",
+      "Scarlet Hawk",
+      "Shadow Hawk",
+      "Brave Moth",
+      "Iron Rust"
+    ],
+    "Monolith": [
+      "Iron Blade",
+      "Frozen Echo",
+      "Sharp Nova",
+      "Brave Bolt",
+      "Wild Moth",
+      "Scarlet Torch",
+      "Vile Fang",
+      "Ghost Warden",
+      "Dusty Spore",
+      "Burning Blade",
+      "Iron Bolt",
+      "Grim Fang",
+      "Sharp Stray",
+      "Brave Shiv",
+      "Dusty Nova",
+      "Burning Stray",
+      "Burning Torch",
+      "Iron Torch",
+      "Cold Spore",
+      "Feral Gnarl",
+      "Red Torch",
+      "Feral Ash",
+      "Red Ash",
+      "Grim Rust",
+      "Cold Warden"
+    ],
+    "Clear Sky": [
+      "Cold Snare",
+      "Iron Snare",
+      "Ghost Hawk",
+      "Feral Spear",
+      "Wild Echo",
+      "Blazing Warden",
+      "Wild Blade",
+      "Black Stray",
+      "Sharp Spear",
+      "Ghost Fang",
+      "Sharp Snare",
+      "Cold Rust",
+      "Burning Gnarl",
+      "Wild Nova",
+      "Shadow Ash",
+      "Frozen Witch",
+      "Hidden Bolt",
+      "Feral Fang",
+      "Vile Stray",
+      "Wild Rust",
+      "Burning Spear",
+      "Burning Claw",
+      "Silent Spear",
+      "Vile Hawk",
+      "Scarlet Ash"
+    ],
+    "Loners": [
+      "Black Shiv",
+      "Iron Witch",
+      "Black Hawk",
+      "Black Torch",
+      "Hidden Witch",
+      "Red Bolt",
+      "Brave Fang",
+      "Red Spear",
+      "Wild Bolt",
+      "Iron Spore",
+      "Hidden Warden",
+      "Ghost Claw",
+      "Shadow Gnarl",
+      "Grim Shiv",
+      "Scarlet Claw",
+      "Red Drift",
+      "Scarlet Snare",
+      "Brave Witch",
+      "Blazing Hawk",
+      "Grim Drift",
+      "Iron Hawk",
+      "Silent Gnarl",
+      "Ghost Spear",
+      "Blazing Blade",
+      "Hidden Shiv"
+    ]
+  },
+  "foreign_fullnames": [
+    {
+      "fullname": "Volodymyr \"Ghost\" Morozova",
+      "origin": "SK"
+    },
+    {
+      "fullname": "Polina \"Blade\" Rudenko",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Oleksiy \"Snare\" Sidorova",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Artyom \"Echo\" Vasilenko",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Svetlana \"Blade\" Pushkareva",
+      "origin": "SK"
+    },
+    {
+      "fullname": "Illia \"Nomad\" Melnyka",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Lubov \"Snare\" Filatov",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Kseniya \"Fox\" Myronenko",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Kateryna \"Blade\" Radchenko",
+      "origin": "HU"
+    },
+    {
+      "fullname": "Grigori \"Stalker\" Reznikova",
+      "origin": "HU"
+    },
+    {
+      "fullname": "Ruslan \"Stalker\" Gerasimov",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Dmitri \"Stalker\" Shevchenko",
+      "origin": "SK"
+    },
+    {
+      "fullname": "Tamara \"Fox\" Chumaka",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Natalia \"Blade\" Lebedeva",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Sofiya \"Ghost\" Yermakova",
+      "origin": "SK"
+    },
+    {
+      "fullname": "Irina \"Wolf\" Maksymenko",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Zoya \"Fox\" Petrov",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Tatiana \"Wolf\" Gerasimov",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Milana \"Nomad\" Volkova",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Nina \"Fox\" Maksymenko",
+      "origin": "PL"
+    },
+    {
+      "fullname": "Anatoly \"Snare\" Melnyka",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Yana \"Nomad\" Zhuravlev",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Solomiya \"Ghost\" Tymoshenko",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Liliya \"Wolf\" Tkachenko",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Oksana \"Echo\" Tkachenko",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Stanislav \"Echo\" Maksymenko",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Zlata \"Nomad\" Volkova",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Ihor \"Nomad\" Semenov",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Sofiya \"Stalker\" Titov",
+      "origin": "PL"
+    },
+    {
+      "fullname": "Arkadiy \"Snare\" Zhuravlev",
+      "origin": "HU"
+    },
+    {
+      "fullname": "Anatoly \"Stalker\" Zinchenko",
+      "origin": "PL"
+    },
+    {
+      "fullname": "Zoya \"Stalker\" Zinchenko",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Natalia \"Hawk\" Ivanova",
+      "origin": "PL"
+    },
+    {
+      "fullname": "Daria \"Shadow\" Morozova",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Natalia \"Blade\" Doronin",
+      "origin": "SK"
+    },
+    {
+      "fullname": "Viktor \"Blade\" Karpova",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Olga \"Hawk\" Petrov",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Daryna \"Ghost\" Doronin",
+      "origin": "HU"
+    },
+    {
+      "fullname": "Polina \"Snare\" Gavrilova",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Lyudmila \"Nomad\" Gerasimov",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Vitaliy \"Nomad\" Shevchenko",
+      "origin": "SK"
+    },
+    {
+      "fullname": "Marko \"Ghost\" Yakovlev",
+      "origin": "PL"
+    },
+    {
+      "fullname": "Petro \"Wolf\" Melnyka",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Taisiia \"Ghost\" Morozov",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Zinaida \"Shadow\" Radchenko",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Bogdana \"Wolf\" Pavlenko",
+      "origin": "PL"
+    },
+    {
+      "fullname": "Daria \"Shadow\" Savchenko",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Andriy \"Stalker\" Fedorenko",
+      "origin": "HU"
+    },
+    {
+      "fullname": "Illia \"Ghost\" Yakovlev",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Daryna \"Echo\" Morozova",
+      "origin": "HU"
+    },
+    {
+      "fullname": "Ivan \"Shadow\" Boyko",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Viktoria \"Hawk\" Bondarenko",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Lesya \"Shadow\" Kovalenko",
+      "origin": "SK"
+    },
+    {
+      "fullname": "Dmitri \"Stalker\" Maksymenko",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Viktor \"Wolf\" Korola",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Igor \"Fox\" Boyko",
+      "origin": "SK"
+    },
+    {
+      "fullname": "Vadym \"Echo\" Melnyka",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Zinoviy \"Blade\" Myronenko",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Polina \"Fox\" Fedorenko",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Taras \"Fox\" Yermakov",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Dmitri \"Blade\" Yermakov",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Andriy \"Stalker\" Petrova",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Valentina \"Stalker\" Vasilenko",
+      "origin": "PL"
+    },
+    {
+      "fullname": "Milana \"Echo\" Chumaka",
+      "origin": "PL"
+    },
+    {
+      "fullname": "Evgeniya \"Fox\" Andriienko",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Zinaida \"Hawk\" Shevchenko",
+      "origin": "BY"
+    },
+    {
+      "fullname": "Tatiana \"Hawk\" Radchenko",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Iryna \"Hawk\" Nazarova",
+      "origin": "PL"
+    },
+    {
+      "fullname": "Natalia \"Fox\" Mazurenko",
+      "origin": "PL"
+    },
+    {
+      "fullname": "Ostap \"Nomad\" Maksymenko",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Leonid \"Wolf\" Shevchenko",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Halyna \"Echo\" Ponomarenko",
+      "origin": "RU"
+    },
+    {
+      "fullname": "Taisiia \"Nomad\" Doronina",
+      "origin": "MD"
+    },
+    {
+      "fullname": "Svetlana \"Blade\" Yakovleva",
+      "origin": "RO"
+    },
+    {
+      "fullname": "Illia \"Fox\" Maksymenko",
+      "origin": "HU"
+    }
+  ]
+}
