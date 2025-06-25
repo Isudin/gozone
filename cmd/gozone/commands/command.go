@@ -18,8 +18,9 @@ func (c *Command) ShowHelpInfo() {
 
 func InitCommands(queries *sqlc.Queries) map[string]Command {
 	cmds := map[string]Command{
-		"init":  newInitCommand(queries),
-		"start": newStartCommand(),
+		"init":     newInitCommand(queries),
+		"start":    newStartCommand(),
+		"fakename": newFakeNameCommand(),
 	}
 
 	cmds["help"] = newHelpCommand(cmds)
