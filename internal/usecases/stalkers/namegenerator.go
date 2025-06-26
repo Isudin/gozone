@@ -10,13 +10,7 @@ import (
 func GenerateName(count int, isMonolith bool) []domain.StalkerName {
 	names := []domain.StalkerName{}
 	for range count {
-		name := domain.StalkerName{
-			FirstName: getRandomElement(infra.FirstNamesMale),
-			LastName:  getRandomElement(infra.LastNamesMale),
-			Moniker:   getRandomElement(infra.GeneralMonikers),
-			Title:     getRandomElement(infra.MilitaryTitles),
-		}
-
+		name := buildName(dutyOpts)
 		names = append(names, name)
 	}
 
@@ -27,4 +21,44 @@ func getRandomElement(slice []string) string {
 	count := len(slice)
 	rnd := rand.IntN(count)
 	return slice[rnd]
+}
+
+func buildName(opts factionOpts) domain.StalkerName {
+	name := domain.StalkerName{}
+	var firstNames, lastNames, monikers []string
+	if checkChance(opts.maleChance) {
+		firstNames = infra.FirstNamesMale
+		lastNames = infra.LastNamesMale
+	} else {
+		firstNames = infra.FirstNamesFemale
+		lastNames = infra.LastNamesFemale
+	}
+
+	if opts.isMonolith {
+		monikers = infra.MonolithMonikers
+	} else {
+		monikers = infra.GeneralMonikers
+	}
+
+	if checkChance(opts.militaryTitleChance) {
+		name.Title = getRandomElement(infra.MilitaryTitles)
+	} else if checkChance(opts.scientificTitleChance) {
+		name.Title = getRandomElement(infra.ScientificTitles)
+	}
+
+	if checkChance(opts.monikerChance) {
+		name.Moniker = getRandomElement(monikers)
+		if !checkChance(opts.onlyMonikerChance) {
+			name.FirstName = getRandomElement(firstNames)
+			if !checkChance(opts.monikerSkipLastNameChance) {
+				name.LastName = getRandomElement(lastNames)
+			}
+		}
+	}
+
+	return name
+}
+
+func checkChance(chance float64) bool {
+	return chance > 0 && rand.Float64() <= chance
 }
