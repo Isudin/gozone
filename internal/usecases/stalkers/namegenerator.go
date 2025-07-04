@@ -19,6 +19,9 @@ func GenerateName(count int, isMonolith bool) []domain.StalkerName {
 
 func getRandomElement(slice []string) string {
 	count := len(slice)
+	if count == 0 {
+		return ""
+	}
 	rnd := rand.IntN(count)
 	return slice[rnd]
 }
