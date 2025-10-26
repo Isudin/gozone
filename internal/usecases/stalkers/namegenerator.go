@@ -1,16 +1,24 @@
+// Package stalkers is provides utility functions for manipulating stalker objects, which includes
+// creating and modifying
 package stalkers
 
 import (
+	"log"
 	"math/rand/v2"
 
 	domain "github.com/isudin/gozone/internal/domain/stalkers"
 	infra "github.com/isudin/gozone/internal/infrastructure/stalkers"
 )
 
-func GenerateName(count int, isMonolith bool) []domain.StalkerName {
+func GenerateName(count int, factionName string) []domain.StalkerName {
+	factionOpts, exists := FactionOpts[factionName]
+	if !exists {
+		log.Fatalf("Faction %s doesn't exist", factionName)
+	}
+
 	names := []domain.StalkerName{}
 	for range count {
-		name := buildName(dutyOpts)
+		name := buildName(factionOpts)
 		names = append(names, name)
 	}
 

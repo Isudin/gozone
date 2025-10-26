@@ -1,5 +1,12 @@
 package stalkers
 
+var FactionOpts = map[string]factionOpts{
+	"duty":       dutyOpts,
+	"loners":     lonersOpts,
+	"ecologists": ecologistsOpts,
+	"monolith":   monolithOpts,
+}
+
 type factionOpts struct {
 	militaryTitleChance       float64
 	scientificTitleChance     float64
@@ -20,7 +27,7 @@ var dutyOpts = factionOpts{
 	isMonolith:                false,
 }
 
-var freeStalkers = factionOpts{
+var lonersOpts = factionOpts{
 	militaryTitleChance:       0,
 	scientificTitleChance:     0,
 	maleChance:                90,
@@ -30,13 +37,13 @@ var freeStalkers = factionOpts{
 	isMonolith:                false,
 }
 
-var ecologists = factionOpts{
+var ecologistsOpts = factionOpts{
 	scientificTitleChance: 100,
 	maleChance:            70,
 	monikerChance:         0.2,
 }
 
-var monolith = factionOpts{
+var monolithOpts = factionOpts{
 	maleChance:        98,
 	monikerChance:     100,
 	onlyMonikerChance: 100,

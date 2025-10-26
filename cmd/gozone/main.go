@@ -5,7 +5,6 @@ import (
 	"database/sql"
 	"log"
 	"os"
-	"strings"
 
 	"github.com/isudin/gozone/cmd/gozone/commands"
 	"github.com/isudin/gozone/internal/domain"
@@ -15,28 +14,17 @@ import (
 )
 
 func main() {
-	queries := initDbConnection()
+	queries := initDBConnection()
 	cmds := commands.InitCommands(queries)
 
-	if len(os.Args) < 1 {
+	// First argument is program name
+	if len(os.Args) < 2 {
 		cmds["help"].Exec(nil)
 		os.Exit(0)
 	}
 
-	// TODO: use 'i' for additional params
-	// i := 0
-	name := ""
-	for _, arg := range os.Args {
-		if strings.HasPrefix(arg, "/") {
-			continue
-		}
-
-		// i = x
-		name = arg
-	}
-
-	log.Println(name)
-	cmd := cmds[name]
+	// Second argument should be command name
+	cmd := cmds[os.Args[1]]
 	if cmd.Name == "" {
 		log.Fatal("command not found")
 	}
@@ -44,7 +32,7 @@ func main() {
 	cmd.Exec(nil)
 }
 
-func initDbConnection() *sqlc.Queries {
+func initDBConnection() *sqlc.Queries {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("error loading .env file")
